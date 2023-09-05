@@ -25,7 +25,7 @@ class HomeController extends GetxController {
     return response;
   }
 
-  RxInt currentIndex = 0.obs;
+  RxInt currentIndex = 1.obs;
   RxList<Widget> bottom_nav_value = [
     HistoryPageView(),
     HomeViewValue(),
@@ -34,7 +34,7 @@ class HomeController extends GetxController {
 
   @override
   void onInit() {
-    currentIndex.value = 0;
+    currentIndex.value = 1;
     super.onInit();
   }
 }

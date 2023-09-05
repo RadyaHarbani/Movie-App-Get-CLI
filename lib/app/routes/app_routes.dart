@@ -9,6 +9,7 @@ abstract class Routes {
   static const PROFILE_PAGE = _Paths.PROFILE_PAGE;
   static const HISTORY_PAGE = _Paths.HISTORY_PAGE;
   static const BALAP = _Paths.BALAP;
+  static const DETAIL_PAGE = _Paths.DETAIL_PAGE;
 }
 
 abstract class _Paths {
@@ -20,4 +21,5 @@ abstract class _Paths {
   static const PROFILE_PAGE = '/profile-page';
   static const HISTORY_PAGE = '/history-page';
   static const BALAP = '/balap';
+  static const DETAIL_PAGE = '/detail-page';
 }

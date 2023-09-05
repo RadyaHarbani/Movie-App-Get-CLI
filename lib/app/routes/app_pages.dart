@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 
-
+import '../modules/detail_page/bindings/detail_page_binding.dart';
+import '../modules/detail_page/views/detail_page_view.dart';
 import '../modules/history_page/bindings/history_page_binding.dart';
 import '../modules/history_page/views/history_page_view.dart';
 import '../modules/home_page/bindings/home_binding.dart';
@@ -19,7 +20,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.REGISTER_PAGE;
+  static const INITIAL = Routes.SPLASH_SCREEN;
 
   static final routes = [
     GetPage(
@@ -52,6 +53,10 @@ class AppPages {
       page: () => HistoryPageView(),
       binding: HistoryPageBinding(),
     ),
-    
+    GetPage(
+      name: _Paths.DETAIL_PAGE,
+      page: () => DetailPageView(),
+      binding: DetailPageBinding(),
+    ),
   ];
 }
