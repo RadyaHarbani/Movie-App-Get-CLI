@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../controllers/on_boarding_page_controller.dart';
-import 'on_boarding_widget_view.dart';
+import 'widgets/on_boarding_widget_view.dart';
 
 class OnBoardingPageView extends GetView<OnBoardingPageController> {
   const OnBoardingPageView({Key? key}) : super(key: key);

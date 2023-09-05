@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
-import '../controllers/register_page_controller.dart';
-import 'register_page_1_view.dart';
-import 'register_page_2_view.dart';
-import 'register_page_3_view.dart';
+import '../../controllers/register_page_controller.dart';
+import 'page_view_value/register_page_1_view.dart';
+import 'page_view_value/register_page_2_view.dart';
+import 'page_view_value/register_page_3_view.dart';
 
 class InputTextForm extends StatelessWidget {
   const InputTextForm({

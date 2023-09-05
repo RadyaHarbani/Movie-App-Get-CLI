@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../controllers/register_page_controller.dart';
-import 'register_page_widget_view.dart';
+import '../../../controllers/register_page_controller.dart';
+import '../register_page_widget_view.dart';
 
 class RegisterPage3View extends GetView<RegisterPageController> {
   const RegisterPage3View({Key? key}) : super(key: key);

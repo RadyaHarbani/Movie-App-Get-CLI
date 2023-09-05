@@ -1,58 +1,69 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 
 import '../controllers/home_controller.dart';
-import '../../register_page/controllers/register_page_controller.dart';
 
 class HomeView extends GetView<HomeController> {
-  final RegisterPageController inputValue = Get.find<RegisterPageController>();
-
   HomeView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Profil'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Obx(() {
-              final profileImage = inputValue.selectedImagePath.value;
-              return Container(
-                width: 120,
-                height: 120,
-                decoration: BoxDecoration(
-                  color: Colors.grey[300],
-                  borderRadius: BorderRadius.circular(100),
+      body:
+          Obx(() => controller.bottom_nav_value[controller.currentIndex.value]),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(8),
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.all(
+              Radius.circular(40),
+            ),
+            boxShadow: [
+              BoxShadow(
+                blurRadius: 20,
+                color: Colors.black.withOpacity(.1),
+              )
+            ],
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 45, vertical: 8),
+            child: GNav(
+              selectedIndex: 1,
+              backgroundColor: Colors.transparent,
+              tabBorderRadius: 20,
+              color: Colors.black54,
+              activeColor: Colors.white,
+              tabBackgroundColor: Color.fromARGB(255, 0, 139, 128),
+              padding: EdgeInsets.all(5),
+              gap: 8,
+              onTabChange: (value) {
+                controller.currentIndex.value = value;
+              },
+              tabs: const [
+                GButton(
+                  padding:
+                      EdgeInsets.only(right: 10, left: 10, top: 5, bottom: 5),
+                  icon: Icons.home_rounded,
+                  text: 'Riwayat',
                 ),
-                // ignore: unnecessary_null_comparison
-                child: profileImage != null
-                    ? ClipRRect(
-                        borderRadius: BorderRadius.circular(100),
-                        child: Image(
-                          image: FileImage(
-                            File(profileImage),
-                          ),
-                          fit: BoxFit.cover,
-                        ),
-                      )
-                    : Icon(
-                        Icons.person,
-                        size: 50,
-                        color: Colors.black87,
-                      ),
-              );
-            }),
-            SizedBox(height: 20),
-            Text('Nama Pengguna'),
-            // Tambahkan informasi profil lainnya di sini
-          ],
+                GButton(
+                  padding:
+                      EdgeInsets.only(right: 10, left: 10, top: 5, bottom: 5),
+                  icon: Icons.history_edu_rounded,
+                  text: 'Beranda',
+                ),
+                GButton(
+                  padding:
+                      EdgeInsets.only(right: 10, left: 10, top: 5, bottom: 5),
+                  icon: Icons.person_rounded,
+                  text: 'Profil',
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );

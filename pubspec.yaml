@@ -2,23 +2,23 @@ name: movie_tmdb_get_cli
 version: 1.0.0+1
 publish_to: none
 description: A new Flutter project.
-environment: 
+environment:
   sdk: '>=3.0.3 <4.0.0'
 
-dependencies: 
+dependencies:
   cupertino_icons: ^1.0.2
+  flutter:
+    sdk: flutter
   get: 4.6.5
   google_fonts: ^5.1.0
+  google_nav_bar: ^5.0.6
   image_picker: 1.0.4
-  flutter: 
+
+dev_dependencies:
+  flutter_test:
     sdk: flutter
 
-dev_dependencies: 
-  flutter_test: 
-    sdk: flutter
-
-flutter: 
-  assets: 
+flutter:
+  assets:
     - assets/images/
   uses-material-design: true
-

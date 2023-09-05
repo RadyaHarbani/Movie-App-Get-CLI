@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../controllers/register_page_controller.dart';
-import 'register_page_widget_view.dart';
+import '../../../controllers/register_page_controller.dart';
+import '../register_page_widget_view.dart';
 
-class RegisterPage2View extends GetView<RegisterPageController> {
-  const RegisterPage2View({Key? key}) : super(key: key);
+class RegisterPage1View extends GetView<RegisterPageController> {
+  const RegisterPage1View({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,14 +17,14 @@ class RegisterPage2View extends GetView<RegisterPageController> {
             child: Column(
               children: [
                 Image.asset(
-                  'assets/images/logo_app.png',
-                  width: 110,
+                  'assets/images/logo_register.png',
+                  width: 100,
                   fit: BoxFit.cover,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 30, bottom: 10),
                   child: Text(
-                    'Lengkapi data dirimu',
+                    'Selamat Bergabung!',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -35,7 +35,7 @@ class RegisterPage2View extends GetView<RegisterPageController> {
                 Padding(
                   padding: const EdgeInsets.only(bottom: 50),
                   child: Text(
-                    'Isi data dirimu agar kami bisa mengenalmu.',
+                    'Jelajahi film terbaru dan terbaik di dunia',
                     style: TextStyle(
                       fontSize: 13,
                       color: Colors.grey,
@@ -44,41 +44,41 @@ class RegisterPage2View extends GetView<RegisterPageController> {
                 ),
                 InputTextForm(
                   prefixIcon: Icon(Icons.person_2_rounded, size: 19),
-                  labelText: "First Name",
-                  controller: controller.firstNameController,
+                  labelText: "Username",
+                  controller: controller.usernameController,
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 10),
                   child: InputTextForm(
-                    prefixIcon: Icon(Icons.person_2_rounded, size: 19),
-                    labelText: "Last Name",
-                    controller: controller.lastNameController,
+                    prefixIcon: Icon(Icons.email_rounded, size: 19),
+                    labelText: "Email",
+                    controller: controller.emailController,
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 10),
-                  child: InputTextForm(
-                    prefixIcon: Icon(Icons.phone_android_rounded, size: 19),
-                    labelText: "Phone Number",
-                    controller: controller.phoneController,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: InputTextForm(
-                    prefixIcon: Icon(Icons.location_on_rounded, size: 19),
-                    labelText: "Adress",
-                    controller: controller.addressController,
-                  ),
+                  child: InputTextFormPassword(),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 30),
-                  child: Text(
-                    'Terimakasih telah bergabung dengan kami.',
-                    style: TextStyle(
-                      fontSize: 13,
-                      color: Colors.grey,
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Don\'t have an account? ',
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Colors.grey,
+                        ),
+                      ),
+                      Text(
+                        'Yaudah',
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],

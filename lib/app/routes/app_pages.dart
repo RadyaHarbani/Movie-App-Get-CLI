@@ -1,5 +1,8 @@
 import 'package:get/get.dart';
 
+
+import '../modules/history_page/bindings/history_page_binding.dart';
+import '../modules/history_page/views/history_page_view.dart';
 import '../modules/home_page/bindings/home_binding.dart';
 import '../modules/home_page/views/home_view.dart';
 import '../modules/on_boarding_page/bindings/on_boarding_page_binding.dart';
@@ -16,7 +19,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.SPLASH_SCREEN;
+  static const INITIAL = Routes.REGISTER_PAGE;
 
   static final routes = [
     GetPage(
@@ -41,8 +44,14 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.PROFILE_PAGE,
-      page: () => const ProfilePageView(),
+      page: () => ProfilePageView(),
       binding: ProfilePageBinding(),
     ),
+    GetPage(
+      name: _Paths.HISTORY_PAGE,
+      page: () => HistoryPageView(),
+      binding: HistoryPageBinding(),
+    ),
+    
   ];
 }
