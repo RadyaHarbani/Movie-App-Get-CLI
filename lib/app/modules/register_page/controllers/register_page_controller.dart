@@ -31,7 +31,7 @@ class RegisterPageController extends GetxController {
       );
     }
   }
-  
+
   @override
   void onInit() {
     super.onInit();
